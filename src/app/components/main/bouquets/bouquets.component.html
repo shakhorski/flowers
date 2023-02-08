@@ -1,0 +1,28 @@
+<div>
+  <h1 class="text-5xl text-center my-8">Author's bouquets</h1>
+  <div class="grid grid-cols-4 ">
+    <div
+    *ngFor="let autorBouquet of bouquets"
+    class="justify-self-center m-1"
+
+    >
+    <div class="cursor-pointer hover:opacity-90">
+      <a [routerLink]="['/bouquets', autorBouquet.id ]"> <img src="{{ autorBouquet.url }}" alt="{{ autorBouquet.name }}" /></a>
+
+    </div>
+    <div class="font-mono text-2xl italic text-center">
+      <h3>{{ autorBouquet.name }}</h3>
+    </div>
+    <div class="flex text-xl items-center mx-auto my-2 justify-around">
+      <div>
+        <h3>{{ autorBouquet.price | number : "1.2-2" }}zł</h3>
+      </div>
+      <button
+      (click)="onChangeCounterBasket($event)" class="rounded-3xl p-2 bg-green-400 w-1/3 " type="text">
+        Добавить
+      </button>
+    </div>
+  </div>
+  </div>
+
+</div>

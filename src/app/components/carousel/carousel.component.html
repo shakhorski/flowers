@@ -1,0 +1,44 @@
+<div >
+  <div class="h-20 bg-green-200 text-3xl flex items-center border-y-2">
+    <h2 class="mx-auto">{{ name }}</h2>
+  </div>
+
+  <div class="flex justify-around  bg-lime-50 my-0">
+    <div
+      class="text-3xl rounded-3xl self-center bg-blue-50 shadow-gray-600 shadow-sm w-10 h-10 text-center"
+    >
+      <button (click)="prevImage()" type="button">&lt;</button>
+    </div>
+
+    <div class="wrapper flex overflow-hidden">
+      <div
+
+        [style.transform]="transformStye"
+        class="tranc my-5"
+        *ngFor="let bouquet of filterImages; let i = index"
+      >
+        <div class="cont">
+          <img class="" src="{{ bouquet.url }}" alt="card" />
+        </div>
+        <div class="font-mono text-2xl italic text-center">
+          <h3>{{ bouquet.name }}</h3>
+        </div>
+        <div class="flex text-xl items-center mx-auto my-2 justify-around">
+          <div>
+            <h3>{{ bouquet.price | number : "1.2-2" }}zł</h3>
+          </div>
+          <button (click)="onChangeCounterBasket()" class="rounded-3xl p-2 bg-green-400" type="text">
+            В корзину
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="text-3xl rounded-3xl self-center bg-blue-50 shadow-gray-600 shadow-sm w-10 h-10 text-center"
+    >
+      <button (click)="nextImage()" type="button">&gt;</button>
+    </div>
+  </div>
+
+</div>
