@@ -18,5 +18,7 @@ public getBouquets (): Observable<IBouquet[]> {
 public getCurrentBouquet(bouquetId: number): Observable<IBouquet> {
   return this.httpClient.get<IBouquet>(this.bouquetsUrl + '/' + bouquetId)
 }
+public addDeleteBouquetInBasket() {
 
+}
 }
