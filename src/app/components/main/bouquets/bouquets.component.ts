@@ -10,11 +10,10 @@ import { BouquetsService } from 'src/app/services/bouquets.service';
 })
 export class BouquetsComponent implements OnInit {
 
-   bouquets: IBouquet[];
-  constructor (
+  bouquets: IBouquet[];
+  constructor(
     public bouquetsService: BouquetsService,
-    public basketService: BasketService)
-    {
+    public basketService: BasketService) {
     bouquetsService.getBouquets().subscribe(bouquetsAutors => this.bouquets = bouquetsAutors)
   }
 
@@ -25,19 +24,16 @@ export class BouquetsComponent implements OnInit {
   onChangeCounterBasket($event: any): void {
 
     if ($event.target.classList.contains('bg-green-400')) {
-      $event.target.classList.remove('bg-green-400')
-      $event.target.classList.add('bg-gray-500', 'text-white')
-      $event.target.innerHTML = 'Удалить'
-          this.basketService.plusGoodInBasket()
+      $event.target.classList.remove('bg-green-400');
+      $event.target.classList.add('addToBasket');
+      $event.target.innerHTML = 'Удалить';
+      this.basketService.plusGoodInBasket()
     } else {
-
-      $event.target.classList.remove('bg-gray-500', 'text-white')
+      $event.target.classList.remove('addToBasket')
       $event.target.classList.add('bg-green-400')
       $event.target.innerHTML = 'Добавить'
       this.basketService.minusGoodInBasket()
-
     }
-    console.log()
   }
 
 }

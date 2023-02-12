@@ -12,21 +12,21 @@ import { IBouquet } from 'src/app/interfaces/bouquet';
 
 export class CarouselComponent implements OnInit {
 
-constructor (private basketService: BasketService) {
+  constructor(private basketService: BasketService) { }
 
-}
-
-  counterGoodsInBasket: number = 0;
-  isBasketEmpty: string = 'hidden';
+  counterGoodsInBasket: number = 0
   x: number = 0
-  filterImages: IBouquet[];
+  isBasketEmpty: string = 'hidden'
+  filterImages: IBouquet[]
   transformStye: string = `translateX(${this.x}px)`
-  maxWidthWrapper: number;
-  @Input() name: string;
-  @Input() bouquets: IBouquet[];
+  maxWidthWrapper: number
+
+  @Input() name: string
+  @Input() bouquets: IBouquet[]
+
   ngOnInit(): void {
     this.filterImages = this.bouquets
-    this.maxWidthWrapper = this.bouquets.length * 370;
+    this.maxWidthWrapper = this.bouquets.length * 370
     this.counterGoodsInBasket = this.basketService.getBasket()
   }
 
@@ -38,6 +38,7 @@ constructor (private basketService: BasketService) {
     }
     this.transformStye = `translateX(${this.x}px)`
   }
+
   prevImage() {
     if (this.x === 0) {
       this.x = -(this.maxWidthWrapper - 1480)
@@ -46,10 +47,9 @@ constructor (private basketService: BasketService) {
     }
     this.transformStye = `translateX(${this.x}px)`
   }
+
   onChangeCounterBasket() {
-this.counterGoodsInBasket++;
-this.basketService.plusGoodInBasket()
-
+    this.counterGoodsInBasket++
+    this.basketService.plusGoodInBasket()
   }
-
 }

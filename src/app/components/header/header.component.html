@@ -10,14 +10,47 @@
       </div>
       <div></div>
     </div>
-    <div class="flex py-3 pl-8">
+    <div class="flex py-3 pl-8 justify-between items-center">
       <button>
         <img src="assets\images\logo3.png" alt="sd" class="w-12 mr-10" />
       </button>
-      <h1 class="flex-1 text-5xl italic font-bold tracking-widest">
-        <a routerLink="">Flowers Street</a>
-      </h1>
-      <div class="mr-14 text-xl flex">
+      <a
+        routerLink=""
+        class="lg:text-5xl md:text-3xl italic font-bold tracking-widest"
+        >Flowers Street</a
+      >
+      <!-- Menu will hide with a small screen -->
+      <button
+        (mouseenter)="isOpenMenuHeader = ''"
+        (mouseleave)="isOpenMenuHeader = 'hidden'"
+        class="lg:hidden mr-10 font-bold text-2xl"
+      >
+        <div
+          class="absolute bg-green-300 opacity-90 text-black w-1/6 text-2xl top-20 right-0"
+          [ngClass]="isOpenMenuHeader"
+        >
+          <div class="menu p-2">
+            <a routerLink="bouquets">rgrg</a>
+          </div>
+          <div class="menu p-2">
+            <a routerLink="flowers-apiece">rgrg</a>
+          </div>
+          <div class="menu p-2">
+            <a routerLink="accessories">rgrg</a>
+          </div>
+          <div class="menu p-2">
+            <a routerLink="gifts">rgr</a>
+          </div>
+          <div class="menu p-2"><a routerLink="bonuses">Bonuses</a></div>
+        </div>
+
+        |||
+      </button>
+<!-- The end of MenuHeader -->
+
+
+<!-- Menu services -->
+      <div class="mr-14 text-xl flex max-lg:hidden">
         <button
           (mouseenter)="onOpenMenu()"
           (mouseleave)="onOpenMenu()"
@@ -26,7 +59,7 @@
           Shop&#9660;
         </button>
         <div
-          class="absolute bg-green-300 opacity-90 text-black w-1/6 text-2xl p-0 mt-12"
+          class="absolute bg-green-300 opacity-90 text-black w-1/6 text-2xl p-0 mt-7"
           [ngClass]="isOpenMenu"
           (mouseenter)="isOpenMenu = ''"
           (mouseleave)="isOpenMenu = 'hidden'"
@@ -45,6 +78,8 @@
           </div>
           <div class="menu p-2"><a routerLink="bonuses">Bonuses</a></div>
         </div>
+
+        <!-- MenuHeader is open -->
         <button class="mr-5">Payment</button>
         <button class="mr-5">Contacts</button>
         <button class="mr-5">About us</button>
@@ -69,37 +104,8 @@
           </div>
         </button>
       </div>
+<!-- The end of Menu services and MenuHeaderOpen -->
+
     </div>
   </header>
-
-  <div
-    class="bg-black w-full h-full fixed top-0 left-0 opacity-70 hidden"
-  ></div>
-  <div class="bg-blue-800 fixed left-96 right-96 min-w-min hidden">
-    <button class="absolute top-2 right-5">X</button>
-    <div class="my-0 mx-auto w-96">
-      <form class="space-y-6">
-        <h2 class="bg-green-500 text-center">Login in your account</h2>
-        <div class="border-red-600">
-          <label for="email" class="">Email</label>
-          <input
-            class="focus:rounded border-solid border-2 focus:border-sky-500 active:border-red-600"
-            type="text"
-            id="email"
-            name="email"
-          />
-        </div>
-        <div class="border-red-600">
-          <label for="password">Password</label>
-          <input
-            type="text"
-            id="password"
-            name="password"
-            class="border-red-600 rounded"
-          />
-        </div>
-        <button>Log in</button>
-      </form>
-    </div>
-  </div>
 </div>
