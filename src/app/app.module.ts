@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './services/api/data.service';
 import { CurrentComponent } from './components/main/bouquets/current/current/current.component';
+import { BasketComponent } from './components/header/basket/basket.component';
 
 
 
@@ -30,7 +31,8 @@ const flowersPages: Routes = [
   { path: 'flowers-apiece', component: FlowersApieceComponent },
   { path: 'accessories', component: AccessoriesComponent },
   { path: 'gifts', component: GiftsComponent },
-  { path: 'bonuses', component: BonusesComponent }
+  { path: 'bonuses', component: BonusesComponent },
+  { path: 'basket', component: BasketComponent }
 
 ]
 
@@ -47,7 +49,8 @@ const flowersPages: Routes = [
     GiftsComponent,
     BonusesComponent,
     CarouselComponent,
-    CurrentComponent
+    CurrentComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,

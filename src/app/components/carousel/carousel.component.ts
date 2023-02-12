@@ -48,8 +48,17 @@ export class CarouselComponent implements OnInit {
     this.transformStye = `translateX(${this.x}px)`
   }
 
-  onChangeCounterBasket() {
-    this.counterGoodsInBasket++
-    this.basketService.plusGoodInBasket()
+  onChangeCounterBasket($event: any, bouquet: IBouquet):void {
+    if ($event.target.classList.contains('bg-green-400')) {
+      $event.target.classList.remove('bg-green-400');
+      $event.target.classList.add('addToBasket');
+      $event.target.innerHTML = 'Delete';
+      this.basketService.plusGoodInBasket(bouquet)
+    } else {
+      $event.target.classList.remove('addToBasket')
+      $event.target.classList.add('bg-green-400')
+      $event.target.innerHTML = 'Add'
+      this.basketService.minusGoodInBasket(bouquet)
+    }
   }
 }

@@ -1,6 +1,50 @@
-<div>
-  <div>
-    <img src="{{ currentBouquet.url }}" />
+<div class="flex">
+  <div class="mt-10">
+    <img src="{{ currentBouquet.url }}" class="ml-10 mr-10" />
   </div>
-  <div></div>
+  <div class="pl-10 max-2xl:max-w-2xl my-3 max-lg:max-w-md max-sm:max-w-xs">
+    <div class="border-b-2 my-4">
+      <h2 class="text-2xl font-mono">{{ currentBouquet.name }}</h2>
+      <p>PRODUCT SKU: 00{{ currentBouquet.id }}</p>
+    </div>
+    <div class="text-3xl border-b-2 font-mono my-4">
+      <p>From {{ currentBouquet.price }} zł</p>
+    </div>
+    <div>
+      <p >BOUQUET SIZE</p>
+      <div class="mb-4">
+        <button
+          type="text"
+          class="border-gray-400 border-2 bg-slate-100 w-32 m-1 hover:bg-slate-200"
+        >
+          Average
+        </button>
+        <button
+          type="text"
+          class="border-gray-400 border-2 bg-slate-100 w-32 m-1 hover:bg-slate-200"
+        >
+          Big +600.00 zł
+        </button>
+      </div>
+      <p>BOUQUET NOTE</p>
+      <input
+        type="text"
+        class="bg-slate-100 h-14 border-red-50 border-2 w-full"
+        placeholder="    Happy Holiday!"
+      />
+      <div class="min-w-96 max-w-7xl my-10">
+        <p>
+          Size L - the length of roses is about 60 cm (3-4 photos) <br />
+          Size XL - the length of the roses is about 70-90 cm (1-2 photos)<br />
+          <br />
+          The rose variety may differ from the example in the photo.<br />
+          It should be remembered that the flowers are alive and the composition
+          may differ slightly from the example in the photo in shade, shape,
+          configuration. But don't worry, your composition will be no less
+          beautiful!<br /><br />
+          +48 793 153 814
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

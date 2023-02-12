@@ -26,11 +26,11 @@
             <h3>{{ bouquet.price | number : "1.2-2" }}zł</h3>
           </div>
           <button
-            (click)="onChangeCounterBasket()"
-            class="rounded-3xl p-2 bg-green-400"
+            (click)="onChangeCounterBasket($event, bouquet)"
+            class="bg-green-400 rounded-3xl p-2 w-28"
             type="text"
           >
-            В корзину
+            Add
           </button>
         </div>
       </div>

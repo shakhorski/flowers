@@ -17,11 +17,11 @@
           <h3>{{ autorBouquet.price | number : "1.2-2" }}zł</h3>
         </div>
         <button
-          (click)="onChangeCounterBasket($event)"
-          class="bg-green-400 rounded-3xl p-2 w-1/3"
+          (click)="onChangeCounterBasket($event, autorBouquet)"
+          class="bg-green-400 rounded-3xl p-2 w-28"
           type="text"
         >
-          Добавить
+          Add
         </button>
       </div>
     </div>
